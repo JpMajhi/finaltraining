@@ -1,5 +1,7 @@
 package tests;
 
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -25,7 +27,9 @@ public class ClaimTest extends BaseTest{
 	        ClaimPage claimPage = new ClaimPage(driver);
 	        claimPage.openClaimSection();
 	        claimPage.assignClaim();
+	        
+	        boolean claimtst = driver.findElement(By.xpath("//a[text()='Employee Claims']")).isDisplayed();
+	        		Assert.assertTrue(claimtst);
 
-	        System.out.println("✅ Assign Claim clicked successfully.");
 	    }
 }
