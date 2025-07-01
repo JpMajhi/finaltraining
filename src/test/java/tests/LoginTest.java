@@ -2,7 +2,6 @@ package tests;
 
 import base.BaseTest;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.*;
 import pages.LoginPage;
 import utils.ExcelUtil;
@@ -19,9 +18,13 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(username, password);
         
-        driver.findElement(By.xpath("//span[text()='Claim']")).click();
-        driver.findElement(By.xpath("//button[text()=' Assign Claim ']")).click();
+
       //span[text()='Admin']
+    
+//        Thread.sleep(2000);          // wait for menu to load
+//        claimPage.openClaimSection();
+//        claimPage.assignClaim();
+
 
     }
 }
