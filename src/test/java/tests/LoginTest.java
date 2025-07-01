@@ -2,6 +2,7 @@ package tests;
 
 import base.BaseTest;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.LoginPage;
 import utils.ExcelUtil;
@@ -18,13 +19,9 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(username, password);
         
-
-      //span[text()='Admin']
+    String actualurl = driver.getCurrentUrl();
+    String expectedurl = "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
     
-//        Thread.sleep(2000);          // wait for menu to load
-//        claimPage.openClaimSection();
-//        claimPage.assignClaim();
-
-
+    Assert.assertEquals(actualurl, expectedurl);
     }
 }
